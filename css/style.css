@@ -224,7 +224,7 @@ body {
     margin-left: 15px;
   }
   .mainWrapper .RightCol {
-    margin-top: 6rem;
+    margin-top: 4.8rem;
     width: 100%;
   }
   .mainWrapper .RightCol .tabContents {
@@ -248,6 +248,9 @@ body {
   .mainWrapper {
     flex-direction: column;
     width: 700px;
+  }
+  .mainWrapper .RightCol {
+    margin-top: 2.5rem;
   }
   .mainWrapper .RightCol .clientText,
   .mainWrapper .RightCol .clientList.else,
