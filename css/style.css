@@ -104,6 +104,7 @@ body {
 .mainWrapper .RightCol .tabs ul.tablinks li {
   margin-right: 28px;
   width: 100%;
+  flex: 1;
 }
 .mainWrapper .RightCol .tabs ul.tablinks li span.topBorder {
   border-bottom: 1px solid #fff;
@@ -121,25 +122,26 @@ body {
   margin: 30px 0 20px;
   width: 100%;
 }
-.mainWrapper .RightCol .tabContents .container .ImgBoxLeft {
-  margin-right: 28px;
+.mainWrapper .RightCol .tabContents .container .tabData {
+  display: flex;
 }
-.mainWrapper .RightCol .tabContents .container .ImgBoxLeft img {
+.mainWrapper .RightCol .tabContents .container .tabData .ImgBoxLeft {
+  margin-right: 30px;
+}
+.mainWrapper .RightCol .tabContents .container .tabData .ImgBoxLeft img {
   display: block;
   margin-top: 5px;
   width: 178px;
 }
-.mainWrapper .RightCol .tabContents .container p {
+.mainWrapper .RightCol .tabContents .container .tabData p {
   color: #646464;
   line-height: 20px;
   margin-bottom: 20px;
   text-shadow: 1px 1px 0 #fff;
 }
-.mainWrapper .RightCol .tabContents .container .tabData {
-  display: flex;
-}
 .mainWrapper .RightCol .tabContents .container .tabData ul.clientList {
   margin-right: 28px;
+  margin-left: 210px;
 }
 .mainWrapper .RightCol .tabContents .container .tabData ul.clientList:hover a {
   color: #828282;
@@ -153,15 +155,27 @@ body {
   text-decoration: none;
   text-shadow: 1px 1px 0 #fff;
 }
+.mainWrapper .RightCol .tabContents .container .tabData ul.clientList.else {
+  margin-left: 630px;
+}
 .mainWrapper .RightCol .tabContents .container .tabData ul.clientList.else li {
   list-style: none;
   padding: 10px 0;
 }
 .mainWrapper .RightCol .tabContents .container .tabData .contact1 {
   margin-right: 28px;
+  margin-left: 420px;
 }
 .mainWrapper .RightCol .tabContents .container .tabData .contact1 p a {
   font-size: var(--small-font);
+}
+.mainWrapper .RightCol .tabContents .container .tabData .clientText,
+.mainWrapper .RightCol .tabContents .container .tabData .clientList.else,
+.mainWrapper .RightCol .tabContents .container .tabData .clientList,
+.mainWrapper .RightCol .tabContents .container .tabData .contact1,
+.mainWrapper .RightCol .tabContents .container .tabData .ImgBoxLeft,
+.mainWrapper .RightCol .tabContents .container .tabData .Textual {
+  max-width: 182px;
 }
 @media screen and (max-width: 767px) {
   .mainWrapper {
@@ -208,17 +222,13 @@ body {
   .mainWrapper .RightCol .tabContents {
     margin: 0;
   }
-  .mainWrapper .about {
-    flex-direction: column;
-  }
-  .mainWrapper .about .Textual {
-    margin-top: 1rem;
-  }
   .mainWrapper .clientList,
   .mainWrapper .clientText,
   .mainWrapper .Textual,
   .mainWrapper .contact1 {
-    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    flex: 1;
   }
 }
 @media screen and (min-width: 767px) {
@@ -231,11 +241,36 @@ body {
     flex-direction: column;
     width: 700px;
   }
-  .mainWrapper .RightCol {
-    padding: 0 1.5rem;
+  .mainWrapper .RightCol .clientText,
+  .mainWrapper .RightCol .clientList.else,
+  .mainWrapper .RightCol .clientList,
+  .mainWrapper .RightCol .contact1,
+  .mainWrapper .RightCol .ImgBoxLeft,
+  .mainWrapper .RightCol .Textual,
+  .mainWrapper .RightCol .ImgBoxLeft {
+    max-width: 165px !important;
+  }
+  .mainWrapper .RightCol .ImgBoxLeft {
+    margin-right: 10px !important;
+  }
+  .mainWrapper .RightCol .ImgBoxLeft img {
+    width: 165px !important;
+  }
+  .mainWrapper .RightCol .clientList {
+    margin-left: 175px !important;
+  }
+  .mainWrapper .RightCol .contact1 {
+    margin-left: 350px !important;
+  }
+  .mainWrapper .RightCol .clientList.else {
+    margin-left: 525px !important;
+  }
+  .mainWrapper .RightCol .clientList,
+  .mainWrapper .RightCol .ImgBoxLeft {
+    margin-right: 10px !important;
   }
   .mainWrapper .logoBox {
-    text-align: center;
+    text-align: start;
   }
   .mainWrapper ul.tablinks li {
     margin-right: 10px !important;
