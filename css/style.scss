@@ -1,6 +1,5 @@
 @charset "utf-8";
 @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap);
-
 :root {
     --base-font-size: 16px;
     --small-font: 0.875rem;
@@ -28,8 +27,8 @@ body {
     outline: 0;
     padding: 0;
     vertical-align: baseline;
-    box-sizing: border-box;
 }
+
 a {
     &:focus-visible {
         color: #000 !important;
@@ -65,16 +64,28 @@ body {
     text-wrap: balance;
 }
 
+.mainWrapper,
+.mainWrapper .RightCol .tabContents .container .data,
+.mainWrapper .RightCol .tabContents .container .heading {
+    display: none;
+}
+
 .mainWrapper {
     margin: 0 auto;
     max-width: 1024px;
-    display: flex;
     margin-top: 65px;
+    .mainWrapper-content {
+        display: flex;
+    }
     .logoBox {
         min-width: 178px;
+        position: relative;
         .logo {
+            position: absolute;
+            top: 0px;
             a {
                 color: #000;
+                opacity: 1;
                 text-shadow: 1px 1px 0 #fff;
                 text-decoration: none;
                 font-weight: 500;
@@ -84,8 +95,8 @@ body {
     }
 
     .RightCol {
+        margin-top: 4.8rem !important;
         margin: auto;
-        margin-top: 4.8rem;
         width: 100%;
         .tabs {
             width: 100%;
@@ -194,9 +205,10 @@ body {
     }
 
     @media screen and (max-width: 767px) {
-        flex-direction: column;
-        padding: 0 15px;
-        // margin-top: 20px;
+        .mainWrapper-content {
+            padding: 0 15px;
+            flex-direction: column;
+        }
         .tabs {
             display: none;
         }
@@ -208,6 +220,7 @@ body {
             margin-bottom: 2rem;
         }
         .heading {
+            display: block !important;
             h4 {
                 font-weight: 500;
             }
@@ -232,18 +245,24 @@ body {
         }
         .logoBox {
             position: fixed;
-            top: 0px;
-            left: 0;
+            top: 0;
+            left: 15px;
+            right: 15px;
             width: 100%;
-            height: 107px;
+            height: 95px;
             background: #eee;
+            z-index: 99;
             h1 {
                 margin-top: 65px;
                 margin-left: 15px;
             }
+            .logo {
+                top: unset;
+                bottom: 0px !important;
+            }
         }
         .RightCol {
-            margin-top: 4.8rem;
+            // margin-top: 4.8rem;
             width: 100%;
             .tabContents {
                 margin: 0;
@@ -265,10 +284,11 @@ body {
         }
     }
     @media screen and (min-width: 767px) and (max-width: 1200px) {
-        flex-direction: column;
         width: 700px;
+        .mainWrapper-content {
+            flex-direction: column;
+        }
         .RightCol {
-            margin-top: 2.5rem;
             .clientText,
             .clientList.else,
             .clientList,
