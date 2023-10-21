@@ -140,7 +140,7 @@ body {
   text-shadow: 1px 1px 0 #fff;
 }
 .mainWrapper .RightCol .tabContents .container .tabData ul.clientList {
-  margin-right: 28px;
+  margin-right: 30px;
   margin-left: 210px;
 }
 .mainWrapper .RightCol .tabContents .container .tabData ul.clientList:hover a {
