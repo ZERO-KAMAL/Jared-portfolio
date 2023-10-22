@@ -320,6 +320,11 @@ body {
         }
         .logoBox {
             text-align: start;
+            .logo {
+                a {
+                    font-size: 21.5px;
+                }
+            }
         }
         ul.tablinks li {
             margin-right: 10px !important;

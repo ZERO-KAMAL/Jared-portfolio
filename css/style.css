@@ -303,6 +303,9 @@ body {
   .mainWrapper .logoBox {
     text-align: start;
   }
+  .mainWrapper .logoBox .logo a {
+    font-size: 21.5px;
+  }
   .mainWrapper ul.tablinks li {
     margin-right: 10px !important;
     width: 150px;
